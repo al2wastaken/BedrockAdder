@@ -1,0 +1,31 @@
+# Build output
+build/
+.gradle/
+out/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jars: ItemsAdder is a paid plugin and must never be committed or redistributed;
+# built plugin jars are release artifacts, not sources
+libs/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Generated Bedrock packs and bundles
+*.mcpack
+
+# Local test servers and test material (root only: src/test holds the unit tests)
+/run/
+/test/
+/test_ss/
+
+# Logs
+*.log

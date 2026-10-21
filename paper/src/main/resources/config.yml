@@ -1,0 +1,49 @@
+# BedrockAdder: ItemsAdder content for Bedrock players on Geyser.
+
+# Convert automatically whenever ItemsAdder builds its resource pack (/iazip, /iareload).
+auto-convert: true
+
+# Name of the generated Bedrock resource pack. Changing it makes Bedrock players download it again.
+pack-name: "BedrockAdder"
+
+# Size in pixels of inventory icons rendered for 3D models (16-256).
+icon-size: 64
+
+fonts:
+  # Convert font images (emojis, chat icons) to Bedrock glyph sheets. Bedrock draws glyphs at text size,
+  # so HUDs and GUI backgrounds made of tall glyphs do not look like on Java.
+  # Pages U+E000 and U+E100 also hold some of Bedrock's own button icons, which get replaced.
+  enabled: true
+  # How many Java font pixels one Bedrock glyph cell stands for. Bedrock draws every cell at the same size,
+  # so this sets the size of all font images: raise it if they look too big on Bedrock, lower it if too small.
+  # Positive offsets (shift characters) keep their width; negative offsets cannot exist on Bedrock.
+  cell-size: 32
+  # GUI backgrounds (ItemsAdder textured inventories) are drawn by Bedrock's chest screen instead of the title.
+  # Their horizontal position relative to the title, in Java pixels: ItemsAdder's x_position_pixels (-16).
+  gui-offset-x: -16
+
+furniture:
+  # Show ItemsAdder furniture (item_display) to Bedrock players with an invisible armor stand that only
+  # Bedrock players see. Needs Floodgate (or Geyser-Spigot on this server).
+  enabled: true
+  # Fine-tuning if furniture appears turned or shifted on Bedrock (degrees / blocks).
+  yaw-offset: 0
+  y-offset: 0
+
+sync:
+  # Where the converted bundle goes:
+  #   AUTO   - LOCAL when Geyser-Spigot is installed on this server, otherwise OFF
+  #   LOCAL  - write into this server's Geyser-Spigot; the Geyser extension is installed automatically
+  #   FOLDER - copy to 'folder', shared with a proxy or standalone Geyser
+  #            (set 'source=FOLDER' and the same folder in the extension's config.properties)
+  #   HTTP   - serve the bundle; a remote Geyser extension downloads it when Geyser starts
+  #            (set 'source=HTTP', 'url' and 'token' in the extension's config.properties)
+  #   OFF    - only write plugins/BedrockAdder/bundle
+  type: AUTO
+  # FOLDER: path relative to the server folder, or absolute.
+  folder: ""
+  http:
+    bind: "0.0.0.0"
+    port: 8765
+    # Shared secret for the extension. Generated on first start.
+    token: ""

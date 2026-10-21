@@ -1,0 +1,6 @@
+id: bedrockadder
+name: BedrockAdder
+main: dev.bedrockadder.geyser.BedrockAdderExtension
+api: 2.11.0
+version: '${version}'
+authors: [BedrockAdder]
